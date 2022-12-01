@@ -1,6 +1,6 @@
 import unittest
 
-from util.file_reader import FileReader
+from src.util.file_reader import FileReader
 
 
 class TestDayOne(unittest.TestCase):
