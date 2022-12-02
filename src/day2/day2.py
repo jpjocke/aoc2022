@@ -1,4 +1,4 @@
-from src.day2.rps.rps_constructor import parse_rps, count_score
+from src.day2.rps.rps_constructor import parse_rps, count_score, parse_rps_2
 from src.util.file_reader import FileReader
 
 fr = FileReader()
@@ -7,4 +7,6 @@ rpss = parse_rps(data)
 score = count_score(rpss)
 print(f"problem1: {score}")
 
-print(f"problem2: {1}")
+rpss = parse_rps_2(data)
+score2 = count_score(rpss)
+print(f"problem2: {score2}")
