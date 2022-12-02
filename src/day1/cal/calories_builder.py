@@ -30,6 +30,4 @@ def find_top_three_sum(cs: List[Calories]) -> int:
     tot_list = [c.sum() for c in cs]
     tot_list.sort()
     tot_list = tot_list[-3:]
-    for t in tot_list:
-        print(t)
     return sum(tot_list)
