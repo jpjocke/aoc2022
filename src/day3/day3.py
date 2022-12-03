@@ -1,4 +1,4 @@
-from src.day3.rug.rugsack_parser import parse_rugsacks, value_converter
+from src.day3.rug.rugsack_parser import parse_rugsacks, value_converter, parse_badges
 from src.util.file_reader import FileReader
 
 fr = FileReader()
@@ -10,4 +10,9 @@ for rug in rugs:
     total += value_converter(dup)
 print(f"problem1: {total}")
 
-print(f"problem2: {2}")
+
+badges = parse_badges(data)
+total_b = 0
+for b in badges:
+    total_b += value_converter(b.find_badge())
+print(f"problem2: {total_b}")
