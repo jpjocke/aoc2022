@@ -22,3 +22,11 @@ def count_fits(sections_list=List[Tuple[Sections, Sections]]) -> int:
         if a.fits_in_other(b):
             count += 1
     return count
+
+
+def count_overlaps(sections_list=List[Tuple[Sections, Sections]]) -> int:
+    count = 0
+    for a, b in sections_list:
+        if a.overlap(b):
+            count += 1
+    return count

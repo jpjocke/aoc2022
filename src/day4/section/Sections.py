@@ -15,3 +15,14 @@ class Sections:
         if other.start >= self.start and other.end <= self.end:
             return True
         return False
+
+    def overlap(self, other: "Sections") -> bool:
+        if other.start <= self.start <= other.end:
+            return True
+        if other.start <= self.end <= other.end:
+            return True
+        if self.start <= other.start <= self.end:
+            return True
+        if self.start <= other.end <= self.end:
+            return True
+        return False

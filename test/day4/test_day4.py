@@ -1,6 +1,6 @@
 import unittest
 
-from src.day4.section.sections_parser import parse_sections, count_fits
+from src.day4.section.sections_parser import parse_sections, count_fits, count_overlaps
 from src.util.file_reader import FileReader
 
 
@@ -17,7 +17,9 @@ class TestDayFour(unittest.TestCase):
     def test_problem_2(self):
         fr = FileReader()
         data = fr.read_as_str_lines("../data/day4_test_in.txt")
-        self.assertEqual(70, 70)
+        sections_list = parse_sections(data)
+        count = count_overlaps(sections_list)
+        self.assertEqual(4, count)
 
 
 if __name__ == '__main__':

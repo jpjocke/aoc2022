@@ -1,4 +1,4 @@
-from src.day4.section.sections_parser import parse_sections, count_fits
+from src.day4.section.sections_parser import parse_sections, count_fits, count_overlaps
 from src.util.file_reader import FileReader
 
 fr = FileReader()
@@ -7,4 +7,5 @@ sections_list = parse_sections(data)
 count = count_fits(sections_list)
 print(f"problem1: {count}")
 
-print(f"problem2: {2}")
+overlap = count_overlaps(sections_list)
+print(f"problem2: {overlap}")
