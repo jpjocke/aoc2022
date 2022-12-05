@@ -10,15 +10,15 @@ class TestDayFive(unittest.TestCase):
         fr = FileReader()
         data = fr.read_as_str_lines("../data/day5_test_in.txt")
         stacks = parse_stacks(data)
-        stacks.print()
         stacks.run_instructions()
-        stacks.print()
         self.assertEqual("CMZ", stacks.get_code())
 
     def test_problem_2(self):
         fr = FileReader()
         data = fr.read_as_str_lines("../data/day5_test_in.txt")
-        self.assertEqual(4, 4)
+        stacks = parse_stacks(data)
+        stacks.run_instructions_2()
+        self.assertEqual("MCD", stacks.get_code())
 
 
 if __name__ == '__main__':

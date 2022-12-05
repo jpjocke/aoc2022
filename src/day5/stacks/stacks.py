@@ -21,10 +21,17 @@ class Stacks:
 
     def run_instructions(self):
         for ins in self.instructions:
-            print(ins)
             for i in range(ins.amount):
                 item = self.stacks[ins.fr].pop()
                 self.stacks[ins.to].append(item)
+
+    def run_instructions_2(self):
+        for ins in self.instructions:
+            move_list = []
+            for i in range(ins.amount):
+                item = self.stacks[ins.fr].pop()
+                move_list.insert(0, item)
+            self.stacks[ins.to].extend(move_list)
 
     def get_code(self) -> str:
         sb = ""

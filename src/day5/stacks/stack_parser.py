@@ -6,7 +6,6 @@ from src.day5.stacks.stacks import Stacks
 
 def parse_stacks(rows: List[str]) -> Stacks:
     stack_size, size = _find_stack_size_rows(rows)
-    print(stack_size)
     stacks = Stacks(stack_size=stack_size)
     stack_mode = True
     for row in rows:
@@ -22,7 +21,6 @@ def parse_stacks(rows: List[str]) -> Stacks:
 
 
 def _parse_stack_row(row: str, size: int, stacks: Stacks):
-    print(row)
     place = 1
     stack_place = 0
     try:
