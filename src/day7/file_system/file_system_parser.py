@@ -28,7 +28,6 @@ class FileSystemParser:
         self.current_row
 
     def _parse_command(self, split: List[str]):
-        print("command")
         if split[1] == "cd":
             if split[2] == "/":
                 self.current_loc = self.root
@@ -37,7 +36,6 @@ class FileSystemParser:
             else:
                 self.current_loc = self.current_loc.get_dir_from_name(name=split[2])
         if split[1] == "ls":
-            print("iterate over listed files")
             self._parse_ls()
 
     def _parse_ls(self):
@@ -45,11 +43,9 @@ class FileSystemParser:
             self.current_row += 1
             split = self.data[self.current_row].split(" ")
             if split[0] == "dir":
-                print("directory")
                 directory = Directory(parent=self.current_loc, name=split[1])
                 self.current_loc.add_dir(directory)
             else:
-                print("file")
                 file = File(name=split[1], size=int(split[0]))
                 self.current_loc.add_file(file)
             if self._is_next_line_command():

@@ -1,6 +1,6 @@
 import unittest
 
-from src.day7.file_system.file_system_traverser import find_total_size_for_problem_1
+from src.day7.file_system.file_system_traverser import find_total_size_for_problem_1, find_size_delete_for_problem_2
 from src.day7.file_system.file_system_parser import FileSystemParser
 from src.util.file_reader import FileReader
 
@@ -19,7 +19,10 @@ class TestDaySeven(unittest.TestCase):
     def test_problem_2(self):
         fr = FileReader()
         data = fr.read_as_str_lines("../data/day7_test_in.txt")
-        self.assertEqual(19, 19)
+        fs_parser = FileSystemParser()
+        root = fs_parser.parse_file_system(data)
+        delete_size = find_size_delete_for_problem_2(root=root)
+        self.assertEqual(24933642, delete_size)
 
 
 if __name__ == '__main__':
