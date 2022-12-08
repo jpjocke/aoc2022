@@ -10,6 +10,7 @@ forest = Forest(data=data)
 visible = forest.find_visible()
 print(f"problem1: {visible}")
 
-print(f"problem2: {2}")
+scenic = forest.find_scenic()
+print(f"problem2: {scenic}")
 
 print("--- %s seconds ---" % (time.time() - start_time))
