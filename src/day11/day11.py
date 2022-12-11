@@ -11,6 +11,8 @@ monkeys = parse_monkeys(data)
 monkey_business = run_monkeys(monkeys, 20)
 print(f"problem1: {monkey_business}")
 
-print(f"problem2: {2}")
+monkeys = parse_monkeys(data)
+monkey_business = run_monkeys(monkeys, 10000, False)
+print(f"problem2: {monkey_business}")
 
 print("--- %s seconds ---" % (time.time() - start_time))

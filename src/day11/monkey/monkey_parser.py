@@ -4,7 +4,7 @@ from src.day11.monkey.monkey import Monkey
 from src.day11.monkey.operation import Operation
 
 
-def parse_monkeys(data: str) -> List[Monkey]:
+def parse_monkeys(data: List[str]) -> List[Monkey]:
     monkeys = []
     for row in data:
         if len(row) == 0:
@@ -35,5 +35,12 @@ def parse_monkeys(data: str) -> List[Monkey]:
             # print(m.on_false)
         else:
             raise BaseException(f"unknown line: {row}")
+
+    worry_fix = 1
+    for m in monkeys:
+        worry_fix = worry_fix * m.test
+
+    for m in monkeys:
+        m.worry_fix = worry_fix
 
     return monkeys
