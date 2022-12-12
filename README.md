@@ -14,7 +14,7 @@ Running Python this year.
 9 ⭐⭐   
 10 ⭐  
 11 ⭐⭐  
-12   
+12 ⭐⭐⭐ Djikstra  
 13   
 14   
 15   

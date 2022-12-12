@@ -1,5 +1,6 @@
 import time
 
+from src.day12.heightmap.diff_start import find_shortest_for_different_start_pos
 from src.day12.heightmap.h_map_parser import parse_h_map
 from src.day12.heightmap.h_map_solver import HeightMapSolver
 from src.util.file_reader import FileReader
@@ -12,6 +13,7 @@ solver = HeightMapSolver(h_map)
 shortest = solver.solve_shortest()
 print(f"problem1: {shortest}")
 
-print(f"problem2: {2}")
+shortest_2 = find_shortest_for_different_start_pos(h_map)
+print(f"problem2: {shortest_2}")
 
 print("--- %s seconds ---" % (time.time() - start_time))

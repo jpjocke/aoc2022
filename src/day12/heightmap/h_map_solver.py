@@ -21,12 +21,14 @@ class HeightMapSolver:
         while len(self.to_visit_list) > 0:
             # next_h_map = self.to_visit_list.pop(0)
             next_h_map = self._get_next()
-            print(f"solving for {next_h_map}")
+            # print(f"solving for {next_h_map}")
             self._update_closest(next_h_map)
             if self.end_found:
                 break
 
         end_key = point_to_key(self.h_map.end.p)
+        if end_key not in self.visited_map:
+            return 99999999999
         return self.visited_map[end_key]
 
     def _get_next(self) -> HeightMapPoint:
