@@ -1,6 +1,10 @@
 from src.util.point import Point
 
 
+def point_to_key(pos: Point) -> str:
+    return get_key(pos.x, pos.y)
+
+
 # gets i-j as key coordinate
 def get_key(i: int, j: int) -> str:
     return str(i) + '-' + str(j)
