@@ -18,6 +18,17 @@ class Cavern:
     def add_rock(self, x: int, y: int):
         self.c_map[y][x].rock = True
 
+    def fill_floor(self):
+        y_max = 0
+        for y, row in enumerate(self.c_map):
+            for cp in row:
+                if cp.rock:
+                    y_max = y
+                    break
+
+        for i in range(1000):
+            self.c_map[y_max + 2][i].rock = True
+
     def fill_sand(self, from_p: Point) -> int:
         sand_on_edge = False
         count = 0
@@ -27,6 +38,9 @@ class Cavern:
             # print("-----")
             # self.print()
             count += 1
+            if self.c_map[from_p.y][from_p.x].sand:
+                # part 2
+                return count
         return count - 1
 
     def _drop_sand(self, sand: Point) -> bool:

@@ -16,7 +16,6 @@ def parse_cavern(data: List[str]) -> Cavern:
             inner_s_2 = split[i+1].split(",")
             e_point = Point(x=int(inner_s_2[0]), y=int(inner_s_2[1]))
             line = Line(start=s_point, end=e_point)
-            print(line)
             for p in line.get_line():
                 cavern.add_rock(x=p.x, y=p.y)
     return cavern

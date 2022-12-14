@@ -18,7 +18,11 @@ class TestDayFourteen(unittest.TestCase):
     def test_problem_2(self):
         fr = FileReader()
         data = fr.read_as_str_lines("../data/day14_test_in.txt")
-        self.assertEqual(2, 2)
+        cavern = parse_cavern(data)
+        cavern.fill_floor()
+        cavern.print()
+        count = cavern.fill_sand(from_p=Point(x=500, y=0))
+        self.assertEqual(93, count)
 
 
 if __name__ == '__main__':
