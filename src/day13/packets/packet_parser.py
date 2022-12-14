@@ -9,20 +9,24 @@ def parse_packets(data: List[str]) -> List[Packet]:
     p = Packet()
     packets.append(p)
     for row in data:
-        # print(row)
         if len(row) == 0:
             continue
         if p.left is not None and p.right is not None:
             p = Packet()
             packets.append(p)
-        tt = "{\"a\":" + row + "}"
-        # print(tt)
         j = json.loads("{\"a\":" + row + "}")
         if p.left is None:
             p.left = j["a"]
         else:
             p.right = j["a"]
-        # print(type(j["a"]))
-        # if type(j["a"]) == list:
-        #     print("its a list")
+    return packets
+
+
+def parse_packets_2(data: List[str]) -> List[Packet]:
+    packets = []
+    for row in data:
+        if len(row) == 0:
+            continue
+        j = json.loads("{\"a\":" + row + "}")
+        packets.append(j["a"])
     return packets
