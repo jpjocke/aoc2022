@@ -13,6 +13,11 @@ class Point:
         return self.x * self.y
 
     def distance(self, other: "Point") -> int:
+        """
+        Manhattan distance
+        :param other:
+        :return:
+        """
         total = 0
         if self.x > other.x:
             total += (self.x - other.x)
