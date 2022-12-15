@@ -17,7 +17,7 @@ Running Python this year.
 12 ⭐⭐⭐ Djikstra  
 13 ⭐⭐  
 14 ⭐⭐⭐ Simulation  
-15   
+15 ⭐⭐⭐  
 16   
 17   
 18   

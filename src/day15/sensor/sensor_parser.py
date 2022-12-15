@@ -19,6 +19,7 @@ def parse_sensors(data: List[str]) -> List[Sensor]:
         s = Sensor()
         s.pos = sensor_point
         s.beacon = beacon_point
+        s.calculate_man_reach()
         sensors.append(s)
     return sensors
 
